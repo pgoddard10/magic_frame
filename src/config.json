@@ -19,7 +19,7 @@
 	// local      - pulls images from a local directory
 	// The script will always take the first source in the array
 	// and fallback to the next source if it fails to get an image.
-	"image_sources": ["deviantart", "artstation", "local"],
+	"image_sources": ["local", "deviantart", "artstation", "local"],
 
 	// local image source will pull its images from this directory.
 	// If you don't use the local image source, you don't have to 
@@ -60,7 +60,7 @@
 	"epaper_type": "7.3inch",
 
 	// If false, Magic Frame does not shut down after refreshing the image.
-	"auto_shutdown": true,
+	"auto_shutdown": false,
 
 	// If battery percentage is lower than this value, 
 	// Magic Frame will display low battery icon.

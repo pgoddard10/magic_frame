@@ -1,5 +1,9 @@
 # Magic Frame
 
+## Initial Setup
+1. Enable i2c in the raspi-config
+2. Install the requirements.txt
+
 ## Configuring remote config
 
 Since Magic Frame is turned off most of the time, we can't really log into it. But we can set up a remote server and a shared folder, put our config in there and point Magic Frame to it.
