@@ -1,5 +1,12 @@
 # Magic Frame
 
+## Hardware
+
+### WittyPi
+
+If not using as a hat, the following pins need connecting to the Pi:
+5v, GPIO2 (SDA I2C), GPIO3 (SLC I2C), GPIO4, Ground, GPIO5, GPIO6. These are pin numbers 2, 3, 5, 7, 9, 29, and 31 respectively. Some alternatives are possible, e.g. there are multiple pins for Ground.
+
 ## Initial Setup
 1. Enable i2c in the raspi-config
 2. Install the requirements.txt
