@@ -9,12 +9,19 @@ If not using as a hat, the following pins need connecting to the Pi:
 
 Witty Pi user manual: https://www.uugear.com/doc/WittyPi4L3V7_UserManual.pdf
 
+### WaveShare 7.3inch ACeP 7-Color E-Paper E-Ink Display Module 800x480
+Set up pins/connections as per https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(F)_Manual#Hardware_Connection
+Install the Python software as per https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(F)_Manual#Python
+
+Full user manual: https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(F)_Manual
+
 ## Initial Setup
 1. Enable i2c and SPI in the raspi-config
 2. Install the requirements.txt
 3. Install the WittyPi software (see their manual)
-4. sudo chmod +x install.sh
-5. ./install.sh
+4. Install the WaveShare software (see their manual)
+5. Back in the magic_frame folder, run `sudo chmod +x install.sh`
+6. `./install.sh`
 
 ## Configuring remote config
 
