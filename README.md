@@ -2,10 +2,12 @@
 
 ## Hardware
 
-### WittyPi
+### Witty Pi 4 L3V7
 
 If not using as a hat, the following pins need connecting to the Pi:
 5v, GPIO2 (SDA I2C), GPIO3 (SLC I2C), GPIO4, Ground, GPIO5, GPIO6. These are pin numbers 2, 3, 5, 7, 9, 29, and 31 respectively. Some alternatives are possible, e.g. there are multiple pins for Ground.
+
+Witty Pi user manual: https://www.uugear.com/doc/WittyPi4L3V7_UserManual.pdf
 
 ## Initial Setup
 1. Enable i2c in the raspi-config
