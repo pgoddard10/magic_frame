@@ -10,8 +10,11 @@ If not using as a hat, the following pins need connecting to the Pi:
 Witty Pi user manual: https://www.uugear.com/doc/WittyPi4L3V7_UserManual.pdf
 
 ## Initial Setup
-1. Enable i2c in the raspi-config
+1. Enable i2c and SPI in the raspi-config
 2. Install the requirements.txt
+3. Install the WittyPi software (see their manual)
+4. sudo chmod +x install.sh
+5. ./install.sh
 
 ## Configuring remote config
 
