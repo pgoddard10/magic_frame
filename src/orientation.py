@@ -24,9 +24,9 @@ except ImportError:
 #      | +-----------+ |      
 #      | |           | |      
 #      | |           | |      
-#      | |           | |      
-# left | |           | | right
-#      | |           | |      
+#      | |           | ¦      
+# left | |           | ¦ right (side of the ribbon)
+#      | |           | ¦      
 #      | |           | |      
 #      | |           | |      
 #      | +-----------+ |      
@@ -37,7 +37,7 @@ except ImportError:
 # left: -y
 # bottom: -x
 # right: +y
-orientation = "top"
+orientation = "left"
 
 
 # Polls the accelerometer and caches the orientation value.

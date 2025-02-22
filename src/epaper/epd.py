@@ -11,6 +11,7 @@ try:
 		from epaper import dummy_epd as epd
 except:
 	from epaper import dummy_epd as epd
+	print ("Error importing epaper drivers for "+config.current.epaper_type+" Defaulting to the default, which is a mock display rather than epaper.")
 
 def get_width():
 	return epd.get_width()

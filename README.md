@@ -19,7 +19,8 @@ Full user manual: https://www.waveshare.com/wiki/7.3inch_e-Paper_HAT_(F)_Manual
 1. Enable i2c and SPI in the raspi-config
 2. Install the requirements.txt
 3. Install the WittyPi software (see their manual)
-4. Install the WaveShare software (see their manual)
+4. Install the WaveShare software (see their manual). It is important to `make` the WaveShare software to generate the `.so` files needed for the drivers in the next step.
+5. Copy the WaveShare drivers from their demo into `src/epaper/drivers` (replace the existing files in this folder) https://github.com/waveshareteam/e-Paper/tree/master/RaspberryPi_JetsonNano/python/lib/waveshare_epd - specifically, the epd7in3e.py, epd7in3f.py, epd7in3g.py, epdconfig.py, sysfs_gpio.so, sysfs_software_spi.so, and the __init__.py files.
 5. Back in the magic_frame folder, run `sudo chmod +x install.sh`
 6. `./install.sh`
 
