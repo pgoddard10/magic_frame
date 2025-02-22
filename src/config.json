@@ -46,6 +46,12 @@
 	// Uses 24h time in HH:MM format.
 	// Only active when refresh_mode is set to 'daily'.
 	"daily_refresh_time": "05:00",
+	// Time of the day when Magic Frame will stop updating (e.g. no updates overnight)
+	// Uses 24h time in HH:MM format.
+	"no_updates_from": "19:00",
+	// Time of the day when Magic Frame will start updating
+	// Uses 24h time in HH:MM format.
+	"no_updates_to": "08:00",
 
 	// Type of the display used.
 	// Currently supported options:
@@ -60,7 +66,7 @@
 	"epaper_type": "7.3inch",
 
 	// If false, Magic Frame does not shut down after refreshing the image.
-	"auto_shutdown": true,
+	"auto_shutdown": false,
 
 	// If battery percentage is lower than this value, 
 	// Magic Frame will display low battery icon.
