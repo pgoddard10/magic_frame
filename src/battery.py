@@ -27,7 +27,7 @@ def add_low_battery_icon(img):
 
 	icon_width, icon_height = icon.size
 	img_width, img_height = img.size
-	
+
 	img.paste(icon, (0, img_height - icon_height), icon)
 
 	return img

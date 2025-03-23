@@ -37,14 +37,19 @@ def report(art):
 		ilog.log(e)
 
 	try:
-		ilog.log("datetime: " + str(now))
-		ilog.log("name: " + art.image_name)
-		ilog.log("source: " + art.image_source)
-		ilog.log("url: " + art.image_url)
-		ilog.log("scheduled_startup: " + witty.get_startup_time())
-		ilog.log("battery: " + str(battery.get_battery_percentage()) + "%")
-		ilog.log("orientation: " + orientation.get())
-	except:
+		ilog.log(f"datetime: {now}")
+		ilog.log(f"get_battery_percentage: {battery.get_battery_percentage()}%")
+		ilog.log(f"battery_low? {battery.battery_low()}")
+		ilog.log(f"orientation: {orientation.get()}")
+		ilog.log(f"image_name: {art.image_name}")
+		ilog.log(f"image_source: {art.image_source}")
+		ilog.log(f"image_url: {art.image_url}")
+		ilog.log(f"refresh_mode: {config.current.refresh_mode}")
+		ilog.log(f"auto_shutdown: {config.current.auto_shutdown}")
+		ilog.log(f"scheduled_shutdown: {witty.get_shutdown_time()}")
+		ilog.log(f"scheduled_startup: {witty.get_startup_time()}")
+	except Exception as e:
+		ilog.log(e)
 		pass
 	ilog.log("==========================================")
 	ilog.dump()

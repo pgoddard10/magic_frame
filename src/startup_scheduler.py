@@ -3,8 +3,10 @@ import config
 import subprocess
 import datetime
 
+
 def sync_rtc_time():
 	now = datetime.datetime.now()
+	print(f"Current time: {now}")
 	witty.set_rtc_datetime(now)
 
 def is_time_to_sleep(time):
@@ -29,6 +31,19 @@ def schedule_next_startup():
 	if config.current.refresh_mode == "hourly":
 		time = now + datetime.timedelta(hours = 1)
 		time = time.replace(minute = 0, second = 0)
+
+		# check if the new time is between the no_updates_from and no_updates_to
+		# times in the config file. If the new time is, override the time with
+		# the no_updates_to time
+		if(is_time_to_sleep(time)):
+			time = now + datetime.timedelta(days = 1)
+			split = config.current.no_updates_to.split(":")
+			time = time.replace(
+				hour = int(split[0]), 
+				minute = int(split[1]), 
+				second = 0
+			)
+
 	elif config.current.refresh_mode == "debug":
 		time = now + datetime.timedelta(
 			hours = 0, 
@@ -44,26 +59,15 @@ def schedule_next_startup():
 			second = 0
 		)
 	
-	# check if the new time is between the no_updates_from and no_updates_to
-	# times in the config file. If the new time is, override the time with
-	# the no_updates_to time
-	if(is_time_to_sleep(time)):
-		split = config.current.no_updates_to.split(":")
-		time = time.replace(
-			hour = int(split[0]), 
-			minute = int(split[1]), 
-			second = 0
-		)
-
 	witty.set_startup_time(time)
-	print("Scheduled startup to " + witty.get_startup_time())
+	print(f"Scheduled startup to {witty.get_startup_time()}")
 
 
 def schedule_shutdown(min = 0, sec = 5):
 	if not config.current.auto_shutdown:
-		print("Shutdown scheduling disabled.")
+		print(f"Shutdown scheduling disabled.")
 		return
 	now = datetime.datetime.now()
 	shutdown = now + datetime.timedelta(minutes = min, seconds = sec)
 	witty.set_shutdown_time(shutdown)
-	print("Scheduled shutdown to " + witty.get_shutdown_time())
+	print(f"Scheduled shutdown to {witty.get_shutdown_time()}")
